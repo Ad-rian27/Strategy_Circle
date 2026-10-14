@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
+  <defs>
+    <linearGradient id="blue" x1="27" y1="71" x2="129" y2="203" gradientUnits="userSpaceOnUse"><stop stop-color="#0875D1"/><stop offset=".52" stop-color="#07418E"/><stop offset="1" stop-color="#092D68"/></linearGradient>
+    <linearGradient id="teal" x1="56" y1="20" x2="206" y2="209" gradientUnits="userSpaceOnUse"><stop stop-color="#11C6BD"/><stop offset=".55" stop-color="#00A6A6"/><stop offset="1" stop-color="#08768A"/></linearGradient>
+    <linearGradient id="gold" x1="139" y1="35" x2="226" y2="132" gradientUnits="userSpaceOnUse"><stop stop-color="#FFE25A"/><stop offset="1" stop-color="#F3A91B"/></linearGradient>
+  </defs>
+  <path d="M145 31c42 5 73 39 77 80l-29-20c-6-25-23-42-48-48l-15-12 15 0Z" fill="url(#gold)"/>
+  <path d="M190 105c-1 42-32 78-73 87l21-29c24-9 40-28 44-53l8-17v12Z" fill="url(#teal)"/>
+  <path d="M113 192c-42-2-77-33-84-73l30 20c8 24 27 40 52 45l17 8h-15Z" fill="url(#blue)"/>
+  <path d="M47 128C35 88 55 45 91 25l-10 34c-20 17-28 41-24 66l-4 19-6-16Z" fill="url(#blue)"/>
+  <path d="M85 48c27-30 73-37 108-17l-34 9c-23-8-47-3-66 13L76 61l9-13Z" fill="url(#teal)"/>
+  <path d="M61 172c30 23 75 22 104-4l-36-1c-20 13-44 14-67 4l-19-2 18 3Z" fill="url(#teal)"/>
+  <path d="M56 52l-5 35-23-25 28-10Z" fill="#0875D1"/><path d="M78 26l34-7-13 31-21-24Z" fill="#08BFC0"/>
+  <path d="M149 31l35-4-19 29-16-25Z" fill="#11BFC0"/><path d="M211 104l16 31-34-6 18-25Z" fill="#16B8AE"/>
+  <path d="M127 202l-32 16 6-35 26 19Z" fill="#08758B"/>
+  <text x="119" y="139" text-anchor="middle" fill="#083C7C" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-style="italic" letter-spacing="-5">S.C</text>
+</svg>
