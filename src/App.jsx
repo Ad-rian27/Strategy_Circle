@@ -89,9 +89,9 @@ function Hero() {
         <div className="hero-copy">
           <Eyebrow>STUDENT TEAM · CAREER READY</Eyebrow>
           <h1>
-            Big ambitions.
+            Aligning vision 
             <br />
-            <span>Shared momentum.</span>
+            <span>driving execution.</span>
           </h1>
           <p className="hero-lead">
             We are a team of ambitious learners working together to build
