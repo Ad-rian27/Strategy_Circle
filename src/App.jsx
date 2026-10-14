@@ -36,7 +36,7 @@ function Navbar({ theme, setTheme }) {
           onClick={() => setOpen(false)}
           aria-label="Strategy Circle home"
         >
-          <img className="brand-logo" src="/images/strategy-circle-logo.svg" alt="" />
+          <img className="brand-logo" src={theme === "dark" ? "/images/strategy-circle-logo-dark.png" : "/images/strategy-circle-logo.png"} alt="" />
           <span>
             strategy<span className="brand-light">circle</span>
           </span>
@@ -82,7 +82,7 @@ function Eyebrow({ children, light = false }) {
   );
 }
 
-function Hero() {
+function Hero({ theme }) {
   return (
     <section className="hero" id="home">
       <div className="container hero-grid">
@@ -106,28 +106,17 @@ function Hero() {
               Explore our mission <ArrowDown size={16} />
             </a>
           </div>
-          <div className="hero-note">
-            <div className="avatar-stack">
-              <i />
-              <i />
-              <i />
-              <i />
-            </div>
-            <span>
-              Better prepared, <strong>together.</strong>
-            </span>
-          </div>
         </div>
         <div
           className="hero-art"
-          aria-label="Abstract illustration representing strategy and shared progress"
+          aria-label="Strategy Circle logo with the S.C. initials and colorful circular arrows"
           role="img"
         >
           <div className="art-orbit orbit-one" />
           <div className="art-orbit orbit-two" />
           <div className="art-sun" />
           <div className="art-core">
-            <img className="core-logo" src="/images/strategy-circle-logo.svg" alt="" />
+            <img className="core-logo" src={theme === "dark" ? "/images/strategy-circle-logo-dark.png" : "/images/strategy-circle-logo.png"} alt="" />
             <strong>
               MOVE WITH
               <br />
@@ -394,7 +383,7 @@ function Goal() {
   );
 }
 
-function Footer() {
+function Footer({ theme }) {
   return (
     <>
       <section className="closing">
@@ -415,7 +404,7 @@ function Footer() {
       <footer className="footer">
         <div className="container footer-inner">
           <a className="brand" href="#home">
-            <img className="brand-logo" src="/images/strategy-circle-logo.svg" alt="" />
+            <img className="brand-logo" src={theme === "dark" ? "/images/strategy-circle-logo-dark.png" : "/images/strategy-circle-logo.png"} alt="" />
             <span>
               strategy<span className="brand-light">circle</span>
             </span>
@@ -454,12 +443,12 @@ export default function App() {
       </a>
       <Navbar theme={theme} setTheme={setTheme} />
       <main id="main">
-        <Hero />
+        <Hero theme={theme} />
         <About />
         <Team />
         <Mission />
         <Goal />
-        <Footer />
+        <Footer theme={theme} />
       </main>
     </>
   );

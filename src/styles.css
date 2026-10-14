@@ -25,3 +25,7 @@
 .closing-mark{color:#d99b11;border-color:color-mix(in srgb,#e8b62e 35%,var(--line))}.focus-icon{color:#0877bd}.focus-line{background:linear-gradient(90deg,#0877bd,#00a99e,#f1bd36)}
 .member-arrow{color:#0877bd}.member-role,.principle-number{color:#008b99}.back-top svg{color:#008b99}
 @media(max-width:640px){.brand-logo{width:40px;height:40px}}
+
+/* Team profile typography */
+.member-info h3{font-size:18px}.member-info p{font-size:12px}.member-focus{font-size:10px}.member-role{font-size:12px}
+@media(max-width:640px){.member-info p{font-size:11px}.member-focus{font-size:9px}}
