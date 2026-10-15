@@ -84,81 +84,53 @@ function Eyebrow({ children, light = false }) {
 
 function Hero({ theme }) {
   return (
-    <section className="hero" id="home">
-      <div className="container hero-grid">
-        <div className="hero-copy">
-          <Eyebrow>STUDENT TEAM · CAREER READY</Eyebrow>
-          <h1>
-            Aligning vision 
+    <section className="hero hero-stage" id="home">
+      <div className="container hero-stage-inner">
+        <div className="hero-rail">
+          <span>STRATEGY CIRCLE</span>
+          <span className="hero-rail-line" />
+          <span>LEARN · BUILD · GROW</span>
+        </div>
+        <div className="hero-canvas">
+          <div className="hero-logo-halo" aria-hidden="true" />
+          <img
+            className="hero-center-logo"
+            src={theme === "dark" ? "/images/strategy-circle-logo-dark.png" : "/images/strategy-circle-logo.png"}
+            alt=""
+            aria-hidden="true"
+          />
+          <div className="hero-title-wrap">
+            <p className="hero-overline">STUDENT TEAM · CAREER READY</p>
+            <h1 aria-label="Strategy Circle">
+              <span className="hero-title-word hero-title-first">Strategy</span>
+              <span className="hero-title-word hero-title-second">Circle<span className="hero-title-dot">.</span></span>
+            </h1>
+          </div>
+          <p className="hero-aside hero-aside-left">
+            Aligning vision,
             <br />
-            <span>driving execution.</span>
-          </h1>
-          <p className="hero-lead">
-            We are a team of ambitious learners working together to build
-            technical expertise, strengthen problem-solving abilities, and
-            prepare for successful careers.
+            driving execution.
           </p>
-          <div className="hero-buttons">
-            <a className="button button-primary" href="#team">
-              Meet the team <ArrowRight size={17} />
-            </a>
-            <a className="button button-quiet" href="#mission">
-              Explore our mission <ArrowDown size={16} />
-            </a>
-          </div>
-        </div>
-        <div
-          className="hero-art"
-          aria-label="Strategy Circle logo with the S.C. initials and colorful circular arrows"
-          role="img"
-        >
-          <div className="art-orbit orbit-one" />
-          <div className="art-orbit orbit-two" />
-          <div className="art-sun" />
-          <div className="art-core">
-            <img className="core-logo" src={theme === "dark" ? "/images/strategy-circle-logo-dark.png" : "/images/strategy-circle-logo.png"} alt="" />
-            <strong>
-              MOVE WITH
-              <br />
-              PURPOSE
-            </strong>
-            <small>STRATEGY CIRCLE</small>
-          </div>
-          <div className="art-point point-one">
-            <span>
-              <Code2 size={17} />
-            </span>
-            <b>Build</b>
-          </div>
-          <div className="art-point point-two">
-            <span>
-              <Brain size={17} />
-            </span>
-            <b>Learn</b>
-          </div>
-          <div className="art-point point-three">
-            <span>
-              <Target size={17} />
-            </span>
-            <b>Grow</b>
-          </div>
-          <div className="art-label label-top">
-            A little better
+          <p className="hero-aside hero-aside-right">
+            Building skills together
             <br />
-            every day <ArrowUpRight size={14} />
-          </div>
-          <div className="art-label label-bottom">
-            <span className="pulse" /> OUR NEXT CHAPTER
-          </div>
-          <div className="art-dot dot-a" />
-          <div className="art-dot dot-b" />
+            for meaningful careers.
+          </p>
         </div>
-      </div>
-      <div className="hero-bottom container">
-        <span>CURIOUS MINDS · PURPOSEFUL PRACTICE · BRIGHTER FUTURES</span>
-        <a href="#about" aria-label="Scroll to about section">
-          SCROLL TO EXPLORE <ArrowDown size={14} />
-        </a>
+        <div className="hero-stage-actions">
+          <a className="button button-primary" href="#team">
+            Meet the team <ArrowRight size={17} />
+          </a>
+          <a className="button button-quiet" href="#mission">
+            Explore our mission <ArrowDown size={16} />
+          </a>
+        </div>
+        <div className="hero-bottom">
+          <span>CURIOUS MINDS · PURPOSEFUL PRACTICE · BRIGHTER FUTURES</span>
+          <a href="#about" aria-label="Scroll to about section">
+            SCROLL TO EXPLORE <ArrowDown size={14} />
+          </a>
+        </div>
       </div>
     </section>
   );
@@ -172,9 +144,9 @@ function About() {
           <div>
             <Eyebrow>WHO WE ARE</Eyebrow>
             <h2>
-              Better together.
+              Aligning vision,
               <br />
-              <span className="serif-accent">Ready for what's next.</span>
+              <span className="serif-accent">driving execution.</span>
             </h2>
           </div>
           <div className="about-body">
@@ -227,6 +199,16 @@ function About() {
 }
 
 function Team() {
+  const memberPortfolios = {
+    "Sumedha CP": "https://elegant-sumedha-folio.lovable.app",
+    "Muhammed Irfan": "https://irfans-gold-folio.lovable.app/",
+    "Adrian Antony": "https://adrians-golden-touch.lovable.app",
+    "P U Athul": "https://athul-amber-showcase.lovable.app",
+    "Arya PS": "https://aryas-amber-folio.lovable.app",
+    "Sandra Joseph": "https://proud-presentation.lovable.app",
+    Surumi: "https://surumi-portfolio.lovable.app/",
+  };
+
   return (
     <section className="section team-section" id="team">
       <div className="container">
@@ -244,8 +226,18 @@ function Team() {
           </p>
         </div>
         <div className="team-grid">
-          {team.map((member, i) => (
-            <article className="member-card" key={member.name}>
+          {team.map((member, i) => {
+            const portfolio = memberPortfolios[member.name];
+            const MemberCard = portfolio ? "a" : "article";
+
+            return (
+            <MemberCard
+              className="member-card"
+              key={member.name}
+              {...(portfolio
+                ? { href: portfolio, target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+            >
               <div className="member-image">
                 <img
                   src={member.image}
@@ -265,8 +257,9 @@ function Team() {
                 <p>{member.bio}</p>
                 <span className="member-focus">{member.focus}</span>
               </div>
-            </article>
-          ))}
+            </MemberCard>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -29,3 +29,33 @@
 /* Team profile typography */
 .member-info h3{font-size:18px}.member-info p{font-size:12px}.member-focus{font-size:10px}.member-role{font-size:12px}
 @media(max-width:640px){.member-info p{font-size:11px}.member-focus{font-size:9px}}
+
+.hero-stage{padding:18px 0 0;min-height:calc(100svh - 76px);background:radial-gradient(ellipse at 50% 48%,color-mix(in srgb,var(--accent) 34%,transparent),transparent 52%)}
+.hero-stage-inner{min-height:calc(100svh - 94px);display:flex;flex-direction:column}
+.hero-rail{display:flex;align-items:center;gap:20px;color:var(--muted);font:700 9px Manrope,sans-serif;letter-spacing:1.3px}
+.hero-rail-line{height:1px;background:var(--line);flex:1}
+.hero-canvas{position:relative;display:grid;place-items:center;flex:1;min-height:475px;isolation:isolate}
+.hero-logo-halo{position:absolute;width:360px;aspect-ratio:1;border:1px solid color-mix(in srgb,var(--green) 22%,transparent);border-radius:50%;box-shadow:0 0 0 32px color-mix(in srgb,var(--accent) 9%,transparent),0 0 0 76px color-mix(in srgb,var(--accent) 5%,transparent);animation:hero-halo-in 1.2s ease-out both}
+.hero-center-logo{position:absolute;width:390px;height:390px;object-fit:contain;opacity:.38;z-index:0;animation:hero-logo-rotate 46s linear infinite,hero-logo-in 1s .1s ease-out both}
+.hero-title-wrap{position:relative;z-index:2;text-align:center}
+.hero-overline{color:var(--green);font-size:9px;font-weight:700;letter-spacing:2px;margin:0 0 20px;animation:hero-copy-in .7s .18s both}
+.hero-stage h1{display:flex;justify-content:center;gap:18px;margin:0;color:var(--ink);font:800 100px/1 Manrope,sans-serif;letter-spacing:0;white-space:nowrap}
+.hero-title-word{display:inline-block;animation:hero-word-in .85s cubic-bezier(.2,.75,.25,1) both}
+.hero-title-first{animation-delay:.22s}
+.hero-title-second{color:var(--green);animation-delay:.38s}
+.hero-title-dot{color:#d99b11}
+.hero-aside{position:absolute;z-index:2;top:56%;margin:0;color:var(--muted);font:500 11px/1.7 'DM Sans',sans-serif;letter-spacing:.2px}
+.hero-aside-left{left:0;text-align:left;animation:hero-copy-in .7s .55s both}
+.hero-aside-right{right:0;text-align:right;animation:hero-copy-in .7s .7s both}
+.hero-stage-actions{display:flex;align-items:center;justify-content:center;gap:24px;padding:0 0 20px}
+.hero-stage-actions .button-primary{background:#0877bd}
+.hero-stage .hero-bottom{width:100%;height:55px;margin:0;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:8px;letter-spacing:1px}
+.hero-stage .hero-bottom a{display:flex;align-items:center;gap:7px;color:var(--ink);font-size:8px;letter-spacing:1px}
+@keyframes hero-logo-rotate{to{transform:rotate(360deg)}}
+@keyframes hero-logo-in{from{opacity:0;scale:.86}to{opacity:.38;scale:1}}
+@keyframes hero-halo-in{from{opacity:0;scale:.82}to{opacity:1;scale:1}}
+@keyframes hero-word-in{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:translateY(0)}}
+@keyframes hero-copy-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){.hero-stage h1{font-size:72px;gap:12px}.hero-center-logo{width:330px;height:330px}.hero-logo-halo{width:310px}.hero-aside{font-size:10px}}
+@media(max-width:640px){.hero-stage{padding-top:16px;min-height:calc(100svh - 66px)}.hero-stage-inner{min-height:calc(100svh - 82px)}.hero-rail{gap:10px;font-size:7px;letter-spacing:.9px}.hero-canvas{min-height:470px}.hero-stage h1{display:block;font-size:54px;line-height:1.03;white-space:normal}.hero-title-word{display:block}.hero-title-second{margin-top:4px}.hero-overline{font-size:8px;letter-spacing:1.5px;margin-bottom:15px}.hero-center-logo{width:270px;height:270px}.hero-logo-halo{width:235px;box-shadow:0 0 0 23px color-mix(in srgb,var(--accent) 9%,transparent),0 0 0 52px color-mix(in srgb,var(--accent) 5%,transparent)}.hero-aside{top:auto;bottom:32px;font-size:9px;line-height:1.6}.hero-aside-left{left:0}.hero-aside-right{right:0}.hero-stage-actions{gap:10px;padding-bottom:12px}.hero-stage-actions .button{font-size:10px;padding:12px 10px;gap:8px}.hero-stage .hero-bottom{height:48px;font-size:6px;letter-spacing:.45px}.hero-stage .hero-bottom a{font-size:6px;letter-spacing:.45px;gap:4px}.hero-stage .hero-bottom a svg{width:11px}}
+@media(max-width:380px){.hero-stage h1{font-size:47px}.hero-aside{font-size:8px}.hero-stage .hero-bottom{font-size:5px}.hero-stage .hero-bottom a{font-size:5px}}
